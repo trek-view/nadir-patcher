@@ -1,3 +1,11 @@
+# -*- coding: utf-8 -*-
+# -------------------------------------------------------------------------------
+# Author: hq@trekview.org
+# Created: 2020-0602
+# Copyright: Trek View
+# Licence: MIT
+# -------------------------------------------------------------------------------
+
 import subprocess
 import shlex
 import os
