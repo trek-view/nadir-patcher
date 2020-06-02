@@ -16,14 +16,26 @@ folder_name="nadir_patcher_temp"
 output1="nadir_patcher_temp\\temp_result1.png"
 output2="nadir_patcher_temp\\temp_result2.png"
 output3="nadir_patcher_temp\\temp_result3.png"
-def main(argv):
 
+def main(argv):
 
     main_file = sys.argv[1]
     overlay_file = sys.argv[2]
     d_size = float(int(sys.argv[3])/100)
-    output = sys.argv[4]
-    print('staring...')  
+    
+    input_file_name=(os.path.splitext(os.path.basename(main_file))[0])
+    input_path_name, input_file_extension = os.path.splitext(main_file)
+     
+    nadir_file_name=(os.path.splitext(os.path.basename(overlay_file))[0])
+    nadir_path_name, nadir_file_extension = os.path.splitext(overlay_file)
+    output_file=input_file_name+"_"+nadir_file_name+"_"+str(sys.argv[3])+"pc"+input_file_extension
+    
+    #print(output_file)
+     
+    #output = sys.argv[4]
+    
+    output=sys.argv[4]+"\\"+output_file
+    print('starting...')  
     if not os.path.exists(folder_name):
                os.makedirs(folder_name)
                
