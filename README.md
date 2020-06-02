@@ -2,7 +2,7 @@
 
 ## In one sentence
 
-Takes logo file, converts to equirectangular image, transforms to desired size, and overlays on-top of an equirectangular photo to create a new equirectangular photo with the nadir in.
+Command line Python script that 1) takes logo file, 2) converts to equirectangular image, 3) transforms to desired size, and 4) overlays on-top of an equirectangular photo as a nadir.
 
 ## Why we built this
 
