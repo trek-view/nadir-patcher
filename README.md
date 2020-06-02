@@ -8,9 +8,9 @@ Takes logo file, converts to equirectangular image, transforms to desired size, 
 
 Adding a nadir to 360 photos is a great way to show off your brand or watermark your imagery.
 
-Lot's of proprietry software offers this functionality already, but we wanted an easy way to create a batch script that could add a nadir to multiple files in one command.
+Lot's of propriety software offers this functionality already, but we wanted an easy way to create a batch script that could add a nadir to multiple files in one command.
 
-Nadir patcher is the result. 
+Nadir Patcher is the result. 
 
 ## How it works
 
@@ -47,9 +47,9 @@ Using the script is simple. Arguments can be provided in the following format:
 
 `[PERCENTAGE SIZE]` refers to the height of the nadir as a percentage of total image height. This must be specified as whole number between 1 (smallest) and 100 (covers entire image). Somewhere between 5% to 15% is what most other software tools use to generate a nadir.
 
-![Nadir as percentage of panoramic image height](/example-nadir-percentage-of-pano.jpg) "Nadir as percentage of panoramic image height")
+![Nadir as percentage of panoramic image height](/example-nadir-percentage-of-pano.jpg)
 
-The naming convention for outputted images is as follows: [ORIGINAL FILE NAME]_nadir_[PERCENTAGE SIZE OF NADIR]pc.[ORIGINAL FILE EXTENSION]. For example; MULTISHOT_9698_000001.jpg > MULTISHOT_9698_000001_nadir_12pc.jpg
+The naming convention for outputted images is as follows: [ORIGINAL FILE NAME] _ nadir _ [PERCENTAGE SIZE OF NADIR] pc. [ORIGINAL FILE EXTENSION]. For example; MULTISHOT_9698_000001.jpg > MULTISHOT_9698_000001_nadir_12pc.jpg
 
 To help you get started here's some examples. You'll find the files used in the [`samples/`](/samples) directory of this repository.
 
