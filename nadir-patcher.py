@@ -12,6 +12,8 @@ import os
 import shutil
 import sys
 
+folder_name="nadir_patcher_temp"
+
 def main(argv):
 
     main_file = sys.argv[1]
