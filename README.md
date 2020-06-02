@@ -53,9 +53,9 @@ In the images below I'll use [this panoramic photo](samples/input/MULTISHOT_9698
 
 The naming convention for outputted images is as follows: [ORIGINAL FILE NAME] _ [NADIR FILE NAME] _ [PERCENTAGE SIZE OF NADIR] pc. [ORIGINAL FILE EXTENSION]. For example; MULTISHOT_9698_000001.jpg > MULTISHOT_9698_000001_nadir_12pc.jpg
 
-And here's what the outputted file looks like when rendered in a panoramic viewer:
+And here's what the outputted file looks like looking down when rendered in a panoramic viewer:
 
-<iframe width="600" height="400" allowfullscreen style="border-style:none;" src="https://cdn.pannellum.org/2.5/pannellum.htm#panorama=samples/output/MULTISHOT_9698_000001_nadir_12pc.jpg"></iframe>
+![Example cropped output from Nadir Patcher](/example-nadir-pano-result.jpg)
 
 To help you get started here's some examples. You'll find the files used in the [`samples/`](/samples) directory of this repository.
 
