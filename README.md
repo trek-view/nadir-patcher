@@ -18,7 +18,7 @@ Nadir Patcher is the result.
 2. You have one of more equirectangular panoramic photo files that you want to add the nadir to
 3. You define the size of the nadir as a % of the photo height
 4. The script flips the nadir image 180 degrees and converts the nadir image into an equirectangular image
-5. The script resizes the nadir image to match the width of the panoramic photo(s) and overlays the nadir on the bottom of the panroamic photo
+5. The script resizes the nadir image to match the width of the panoramic photo(s) and overlays the nadir on the bottom of the panoramic photo
 6. The script outputs the new panoramic photo with the new nadir in the output directory defined
 
 ## Requirements
@@ -43,13 +43,19 @@ Nadir Patcher is the result.
 
 Using the script is simple. Arguments can be provided in the following format:
 
-`python nadir-patcher.py "[PANOROAMIC PHOTO FILE OR FOLDER PATH]" "[NADIR FILE PATH]" [PERCENTAGE SIZE] "[OUTPUT_FOLDER_PATH]"`
+`python nadir-patcher.py "[PANORAMIC PHOTO FILE OR FOLDER PATH]" "[NADIR FILE PATH]" [PERCENTAGE SIZE] "[OUTPUT_FOLDER_PATH]"`
+
+In the images below I'll use [this panoramic photo](input/MULTISHOT_9698_000001.jpg) and [this nadir](my_custom_nadir.png).
 
 `[PERCENTAGE SIZE]` refers to the height of the nadir as a percentage of total image height. This must be specified as whole number between 1 (smallest) and 100 (covers entire image). Somewhere between 5% to 15% is what most other software tools use to generate a nadir.
 
 ![Nadir as percentage of panoramic image height](/example-nadir-percentage-of-pano.jpg)
 
 The naming convention for outputted images is as follows: [ORIGINAL FILE NAME] _ [NADIR FILE NAME] _ [PERCENTAGE SIZE OF NADIR] pc. [ORIGINAL FILE EXTENSION]. For example; MULTISHOT_9698_000001.jpg > MULTISHOT_9698_000001_nadir_12pc.jpg
+
+And here's what is looks like when rendered in a panoramic viewer:
+
+![Example Nadir Patcher output](/example-nadir-pano-result.jpg)
 
 To help you get started here's some examples. You'll find the files used in the [`samples/`](/samples) directory of this repository.
 
@@ -61,7 +67,7 @@ _MacOS / Linux:_
 
 _Windows:_
 
-`python nadir-patcher.py "samples\input\MULTISHOT_9698_000001.jpg" "samples\input\my_custom_nadir.png" 12 "samples\demo\"`
+`python nadir-patcher.py "samples\\input\\MULTISHOT_9698_000001.jpg" "samples\\input\\my_custom_nadir.png" 12 "samples\\demo"`
 
 **Take a directory of panoramic images and add a nadir covering 8% of every image in the directory:**
 
