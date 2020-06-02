@@ -55,11 +55,23 @@ To help you get started here's some examples. You'll find the files used in the 
 
 **Take a single panoramic image and add a nadir covering 12% of the image:**
 
-`python nadir-patcher.py "samples/input/MULTISHOT_9698_000001.jpg" "samples/input/my_custom_nadir.png" 12 "samples/output/`
+_MacOS / Linux:_
+
+`python nadir-patcher.py samples/input/MULTISHOT_9698_000001.jpg samples/input/my_custom_nadir.png 12 samples/output/`
+
+_Windows:_
+
+`python nadir-patcher.py "samples/input/MULTISHOT_9698_000001.jpg" "samples/input/my_custom_nadir.png" 12 "samples/output/"`
 
 **Take a directory of panoramic images and add a nadir covering 8% of every image in the directory:**
 
-`python nadir-patcher.py "samples/input/" "samples/input/my_custom_nadir.png" 8 samples/output/`
+_MacOS / Linux:_
+
+`python nadir-patcher.py samples/input/ samples/input/my_custom_nadir.png 8 samples/output/`
+
+_Windows:_
+
+`python nadir-patcher.py "samples/input/" "samples/input/my_custom_nadir.png" 8 "samples/output/"`
 
 ## Branding guidelines
 
