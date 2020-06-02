@@ -61,7 +61,7 @@ _MacOS / Linux:_
 
 _Windows:_
 
-`python nadir-patcher.py "samples/input/MULTISHOT_9698_000001.jpg" "samples/input/my_custom_nadir.png" 12 "samples/output/"`
+`python nadir-patcher.py "samples\input\MULTISHOT_9698_000001.jpg" "samples\input\my_custom_nadir.png" 12 "samples\output\"`
 
 **Take a directory of panoramic images and add a nadir covering 8% of every image in the directory:**
 
@@ -71,7 +71,7 @@ _MacOS / Linux:_
 
 _Windows:_
 
-`python nadir-patcher.py "samples/input/" "samples/input/my_custom_nadir.png" 8 "samples/output/"`
+`python nadir-patcher.py "samples\input\" "samples\input\my_custom_nadir.png" 8 "samples\output\"`
 
 ## Branding guidelines
 

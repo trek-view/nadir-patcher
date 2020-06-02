@@ -12,11 +12,6 @@ import os
 import shutil
 import sys
 
-folder_name="nadir_patcher_temp"
-output1="nadir_patcher_temp\\temp_result1.png"
-output2="nadir_patcher_temp\\temp_result2.png"
-output3="nadir_patcher_temp\\temp_result3.png"
-
 def main(argv):
 
     main_file = sys.argv[1]
@@ -35,6 +30,11 @@ def main(argv):
     #output = sys.argv[4]
     
     output=sys.argv[4]+"\\"+output_file
+
+    output1="nadir_patcher_temp\\temp_result1"+nadir_file_extension
+    output2="nadir_patcher_temp\\temp_result2"+nadir_file_extension
+    output3="nadir_patcher_temp\\temp_result3"+nadir_file_extension
+
     print('starting...')  
     if not os.path.exists(folder_name):
                os.makedirs(folder_name)
