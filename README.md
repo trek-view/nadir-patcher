@@ -45,7 +45,7 @@ Using the script is simple. Arguments can be provided in the following format:
 
 `python nadir-patcher.py "[PANORAMIC PHOTO FILE OR FOLDER PATH]" "[NADIR FILE PATH]" [PERCENTAGE SIZE] "[OUTPUT_FOLDER_PATH]"`
 
-In the images below I'll use [this panoramic photo](input/MULTISHOT_9698_000001.jpg) and [this nadir](my_custom_nadir.png).
+In the images below I'll use [this panoramic photo](samples/input/MULTISHOT_9698_000001.jpg) and [this nadir](samples/input/my_custom_nadir.png).
 
 `[PERCENTAGE SIZE]` refers to the height of the nadir as a percentage of total image height. This must be specified as whole number between 1 (smallest) and 100 (covers entire image). Somewhere between 5% to 15% is what most other software tools use to generate a nadir.
 
@@ -53,9 +53,9 @@ In the images below I'll use [this panoramic photo](input/MULTISHOT_9698_000001.
 
 The naming convention for outputted images is as follows: [ORIGINAL FILE NAME] _ [NADIR FILE NAME] _ [PERCENTAGE SIZE OF NADIR] pc. [ORIGINAL FILE EXTENSION]. For example; MULTISHOT_9698_000001.jpg > MULTISHOT_9698_000001_nadir_12pc.jpg
 
-And here's what is looks like when rendered in a panoramic viewer:
+And here's what the outputted file looks like when rendered in a panoramic viewer:
 
-![Example Nadir Patcher output](/example-nadir-pano-result.jpg)
+<iframe width="600" height="400" allowfullscreen style="border-style:none;" src="https://cdn.pannellum.org/2.5/pannellum.htm#panorama=samples/output/MULTISHOT_9698_000001_nadir_12pc.jpg"></iframe>
 
 To help you get started here's some examples. You'll find the files used in the [`samples/`](/samples) directory of this repository.
 
