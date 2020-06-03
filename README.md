@@ -17,7 +17,7 @@ Nadir Patcher is the result.
 1. You create a 500px x 500px image you want to use as the nadir
 2. You have one of more equirectangular panoramic photo or video files that you want to add the nadir to
 3. You define the size of the nadir as a % of the photo or video height
-4. The script flips the nadir image 180 degrees and converts the nadir image into an equirectangular image
+4. The script converts the nadir image into an equirectangular image, and then flips the nadir image vertically and horizontally 
 5. The script resizes the nadir image to match the width of the panoramic photo(s) and overlays the nadir on the bottom of the panoramic photo or video
 6. The script outputs the new panoramic photo or video with the new nadir in the output directory defined
 
