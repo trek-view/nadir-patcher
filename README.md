@@ -31,7 +31,7 @@ Nadir Patcher is the result.
 
 ### Image Requirements
 
-**For panoramic photo**
+**For panoramic photo / video**
 
 * Must be [XMP] ProjectionType=equirectangular. 
 
@@ -89,7 +89,14 @@ _Windows:_
 
 `python nadir-patcher.py "samples\input\VIDEO_7152.mp4" "samples\input\my_custom_nadir.png" 12 "samples\demo"`
 
-## Branding guidelines
+
+## Nadir library
+
+We've included some stock nadirs you can use in the [`nadir-libary/`](/nadir-library) directory of this repository.
+
+Submit you own logos (via pull request or email) to us and we'll add them to the library.
+
+### Branding guidelines
 
 If you plan to upload your photos to products like Google Street View, be aware of the branding guidelines for nadirs, otherwise your images could be rejected.
 
