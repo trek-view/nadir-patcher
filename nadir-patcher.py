@@ -3,7 +3,7 @@
 # Author: hq@trekview.org
 # Created: 2020-06-02
 # Copyright: Trek View
-# Licence: MIT
+# Licence: GNU AGPLv3
 # -------------------------------------------------------------------------------
 
 import subprocess

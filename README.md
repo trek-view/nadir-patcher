@@ -112,4 +112,4 @@ We offer community support for all our software on our Campfire forum. [Ask a qu
 
 ## License
 
-Nadir Patcher is licensed under an [GNU AGPLv3 License](https://github.com/trek-view/nadir-patcher/blob/master/LICENSE.txt).
+Nadir Patcher is licensed under a [GNU AGPLv3 License](https://github.com/trek-view/nadir-patcher/blob/master/LICENSE.txt).
