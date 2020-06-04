@@ -23,6 +23,10 @@ Nadir Patcher is the result.
 
 ## Requirements
 
+### OS Requirements
+
+Works on Windows, Linux and MacOS.
+
 ### Software Requirements
 
 * Python version 3.6+
