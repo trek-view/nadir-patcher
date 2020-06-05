@@ -63,6 +63,8 @@ And here's what the outputted file looks like looking down when rendered in a pa
 
 To help you get started here's some examples. You'll find the files used in the [`samples/`](/samples) directory of this repository.
 
+### Examples
+
 **Take a single panoramic image and add a nadir covering 12% of the image:**
 
 _MacOS / Linux:_
@@ -92,7 +94,6 @@ _MacOS / Linux:_
 _Windows:_
 
 `python nadir-patcher.py "samples\input\VIDEO_7152.mp4" "samples\input\my_custom_nadir.png" 12 "samples\demo"`
-
 
 ## Nadir library
 
