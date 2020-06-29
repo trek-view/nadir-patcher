@@ -43,6 +43,10 @@ Works on Windows, Linux and MacOS.
 
 * Must be a minimum of 500 pixels x 500 pixels
 
+For simplicity, the process below will always result in a circular nadir, whether you use a circular logo or square logo to start with.
+
+If you use as a circular image for the nadir, make sure to use a transparent background and to save as a `.png` image.
+
 ## Quick start guide
 
 Using the script is simple. Arguments can be provided in the following format:
