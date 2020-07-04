@@ -53,17 +53,17 @@ Using the script is simple. Arguments can be provided in the following format:
 
 `python nadir-patcher.py "[PANORAMIC PHOTO / VIDEO FILE OR FOLDER PATH]" "[NADIR FILE PATH]" [PERCENTAGE SIZE] "[OUTPUT_FOLDER_PATH]"`
 
-In the images below I'll use [this panoramic photo](samples/input/MULTISHOT_9698_000001.jpg) and [this nadir](samples/input/my_custom_nadir.png).
+In the images below I'll use [this panoramic photo](/samples/input/MULTISHOT_9698_000001.jpg) and [this nadir](/samples/input/my_custom_nadir.png).
 
 `[PERCENTAGE SIZE]` refers to the height of the nadir as a percentage of total image height. This must be specified as whole number between 1 (smallest) and 100 (covers entire image). Somewhere between 5% to 15% is what most other software tools use to generate a nadir.
 
-![Nadir as percentage of panoramic image height](/example-nadir-percentage-of-pano.jpg)
+![Nadir as percentage of panoramic image height](/readme-images/example-nadir-percentage-of-pano.jpg)
 
 The naming convention for outputted images is as follows: [ORIGINAL FILE NAME] _ [NADIR FILE NAME] _ [PERCENTAGE SIZE OF NADIR] pc. [ORIGINAL FILE EXTENSION]. For example; MULTISHOT_9698_000001.jpg > MULTISHOT_9698_000001_nadir_12pc.jpg
 
 And here's what the outputted file looks like looking down when rendered in a panoramic viewer:
 
-![Example cropped output from Nadir Patcher](/example-nadir-pano-result.jpg)
+![Example cropped output from Nadir Patcher](/readme-images/example-nadir-pano-result.jpg)
 
 To help you get started here's some examples. You'll find the files used in the [`samples/`](/samples) directory of this repository.
 
@@ -117,4 +117,4 @@ We offer community support for all our software on our Campfire forum. [Ask a qu
 
 ## License
 
-Nadir Patcher is licensed under a [GNU AGPLv3 License](https://github.com/trek-view/nadir-patcher/blob/master/LICENSE.txt).
+Nadir Patcher is licensed under a [GNU AGPLv3 License](/LICENSE.txt).
