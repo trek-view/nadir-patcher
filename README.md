@@ -32,6 +32,8 @@ Works on Windows, Linux and MacOS.
 * Python version 3.6+
 * [Imagemagick](https://imagemagick.org/script/download.php)
 * [ffmpeg / ffprobe](https://www.ffmpeg.org/download.html)
+* [ffmpeg / ffprobe](https://www.ffmpeg.org/download.html)
+* [exiftool](https://exiftool.org/)
 
 ### Image Requirements
 
