@@ -69,12 +69,15 @@ def main_process(main_file_dir,overlay_file,nadir_percentage,os_path_set):
         input_file_name=(os.path.splitext(os.path.basename(main_file_dir))[0])
         input_path_name, input_file_extension = os.path.splitext(main_file_dir)
 
-         
         nadir_file_name=(os.path.splitext(os.path.basename(overlay_file))[0])
         nadir_path_name, nadir_file_extension = os.path.splitext(overlay_file)
         output_file=input_file_name+"_"+nadir_file_name+"_"+str(sys.argv[3])+"pc"+input_file_extension
 
-        output_file=sys.argv[4]+os_path_set+output_file
+        output_directory = sys.argv[4]
+        if not os.path.exists(output_directory):
+            os.makedirs(output_directory)
+
+        output_file=output_directory+os_path_set+output_file
 
         temp_output1=temp_folder_name+os_path_set+"temp_result1"+nadir_file_extension
         temp_output2=temp_folder_name+os_path_set+"temp_result2"+nadir_file_extension
