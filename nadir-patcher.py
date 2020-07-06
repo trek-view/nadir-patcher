@@ -85,8 +85,8 @@ def main_process(main_file_dir, overlay_file, nadir_percentage):
     output_file = input_file_name + "_" + nadir_file_name + "_" + str(sys.argv[3]) + "pc" + input_file_extension
 
     output_directory = os.path.abspath(sys.argv[4])
-    if not os.path.isdir(output_directory):
-        os.mkdir(output_directory)
+    if not os.path.exists(output_directory):
+        os.makedirs(output_directory)
     output_file = os.path.join(output_directory, output_file)
 
     temp_output1 = os.path.join(temp_folder_name, "temp_result1" + nadir_file_extension)
