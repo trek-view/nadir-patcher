@@ -21,6 +21,11 @@ Nadir Patcher is the result.
 5. The script resizes the nadir image to match the width of the panoramic photo(s) and overlays the nadir on the bottom of the panoramic photo or video
 6. The script outputs the new panoramic photo or video with the new nadir in the output directory defined
 
+There are two versions of the script:
+
+* `nadir-ptacher.py`: this calculates the resolution of the first image once, and thus the nadir once. It then overlays the nadir on all images supplied. Use when images are all the same resolution.
+* `nadir-ptacher.py`: this calculates the resolution of every image, and thus the nadir everytime. This is useful when directory has photo files with multiple resolutions.
+
 ## Requirements
 
 ### OS Requirements
