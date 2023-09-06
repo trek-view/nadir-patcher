@@ -2,15 +2,22 @@
 
 ## In one sentence
 
-Command line Python script that 1) takes logo file, 2) converts to equirectangular image, 3) transforms to desired size, and 4) overlays on-top of an equirectangular photo or video as a nadir.
+Command line Python script that 1) takes logo file, 2) converts to equirectangular image, 3) transforms to desired size, and 4) overlays on-top of an equirectangular photo or video.
 
 ## Why we built this
 
 Adding a nadir to 360 imagery is a great way to show off your brand or watermark your imagery.
 
-Lot's of propriety software offers this functionality already, but we wanted an easy way to create a batch script that could add a nadir to multiple files in one command.
+Lots of propriety software offers this functionality already, but we wanted an easy way to create a batch script that could add a nadir to multiple files in one command.
 
-Nadir Patcher is the result. 
+Nadir Patcher is the result.
+
+## READ BEFORE YOU BEGIN
+
+Nadir Patcher is designed as a simple tool to add a nadir to a series images. We have some other tools that might be better suited to what you need;
+
+* [gopro2gsv](https://github.com/trek-view/gopro2frames) that takes a series of GoPro timelapse images, converts to a video (with nadir) and uploads to Street View. If your ultimate goal is to upload to Street View, we recommend using gopro2frames.
+* if you need to break a GoPro video into frames (and optionally add a nadir) use our tool [gopro2frames](https://github.com/trek-view/gopro2frames). This will work with GoPro videos, including unprocessed GoPro Fusion (2x fisheye mp4) and GoPro MAX (.360) videos.
 
 ## How it works
 
@@ -21,16 +28,13 @@ Nadir Patcher is the result.
 5. The script resizes the nadir image to match the width of the panoramic photo(s) and overlays the nadir on the bottom of the panoramic photo or video
 6. The script outputs the new panoramic photo or video with the new nadir in the output directory defined
 
-There are two versions of the script:
+If you are keen to learn more, these supporting blog posts will be of interest;
 
-* `nadir-ptacher.py`: this calculates the resolution of the first image once, and thus the nadir once. It then overlays the nadir on all images supplied. Use when images are all the same resolution.
-* `nadir-ptacher.py`: this calculates the resolution of every image, and thus the nadir everytime. This is useful when directory has photo files with multiple resolutions.
+* How to Add a Custom Nadir to a 360 Photo using GIMP: https://www.trekview.org/blog/adding-a-custom-nadir-to-360-video-photo/
+* How to Add a Custom Nadir to a 360 Photo Programmatically (using ImageMagick): https://www.trekview.org/blog/adding-a-custom-nadir-to-360-video-photo/
+* Using ffmpeg to overlay a custom nadir or watermark on GoPro videos: https://www.trekview.org/blog/overlay-nadir-watermark-video-using-ffmpeg/
 
 ## Requirements
-
-### OS Requirements
-
-Works on Windows, Linux and MacOS.
 
 ### Software Requirements
 
@@ -38,88 +42,69 @@ Works on Windows, Linux and MacOS.
 * [Imagemagick](https://imagemagick.org/script/download.php)
 * [ffmpeg / ffprobe](https://www.ffmpeg.org/download.html)
 
+These must be installed in the path. You can check this by running `magick` and `ffmpeg` in the CLI. If it returns information about the tools, they are correctly installed.
+
 ### Image Requirements
 
-**For panoramic photo / video**
+**For panoramic photo**
 
-* Must be [XMP] ProjectionType=equirectangular. 
+* Must be `[XMP] ProjectionType=equirectangular`. 
 
 **For nadir**
 
-* Must be a minimum of 500 pixels x 500 pixels
-
-For simplicity, the process below will always result in a circular nadir, whether you use a circular logo or square logo to start with.
-
-If you use as a circular image for the nadir, make sure to use a transparent background and to save as a `.png` image.
+* Must be a circle with a diameter of 500px.
 
 ## Quick start guide
 
+There are two versions of the script:
+
+* `nadir-patcher.py`: this calculates the resolution of the first image once, and thus the nadir once. It then overlays the nadir on all images supplied. Use when images are all the same resolution.
+* `nadir-patcher.py`: this calculates the resolution of every image, and thus the nadir everytime. This is useful when directory has photo files with multiple resolutions.
+
+```shell
+# clone the latest code
+git clone https://github.com/trek-view/nadir-patcher
+cd nadir-patcher
+# create a venv
+python3 -m venv nadir-patcher-venv
+source nadir-patcher-venv/bin/activate
+```
+
 Using the script is simple. Arguments can be provided in the following format:
 
-`python nadir-patcher.py "[PANORAMIC PHOTO / VIDEO FILE OR FOLDER PATH]" "[NADIR FILE PATH]" [PERCENTAGE SIZE] "[OUTPUT_FOLDER_PATH]"`
+```shell
+python nadir-patcher.py "[PANORAMIC PHOTO / VIDEO FILE OR FOLDER PATH]" "[NADIR FILE PATH]" [PERCENTAGE SIZE] "[OUTPUT_FOLDER_PATH]"
+```
 
-In the images below I'll use [this panoramic photo](/samples/input/MULTISHOT_9698_000001.jpg) and [this nadir](/samples/input/my_custom_nadir.png).
+Where:
 
-`[PERCENTAGE SIZE]` refers to the height of the nadir as a percentage of total image height. This must be specified as whole number between 1 (smallest) and 100 (covers entire image). Somewhere between 5% to 15% is what most other software tools use to generate a nadir.
-
-![Nadir as percentage of panoramic image height](/readme-images/example-nadir-percentage-of-pano.jpg)
-
-The naming convention for outputted images is as follows: [ORIGINAL FILE NAME] _ [NADIR FILE NAME] _ [PERCENTAGE SIZE OF NADIR] pc. [ORIGINAL FILE EXTENSION]. For example; MULTISHOT_9698_000001.jpg > MULTISHOT_9698_000001_nadir_12pc.jpg
-
-And here's what the outputted file looks like looking down when rendered in a panoramic viewer:
-
-![Example cropped output from Nadir Patcher](/readme-images/example-nadir-pano-result.jpg)
-
-To help you get started here's some examples. You'll find the files used in the [`samples/`](/samples) directory of this repository.
+* `[PANORAMIC PHOTO / FOLDER PATH]`: is the photo or directory of photos you want to add the nadir too
+* `[NADIR FILE PATH]` is the path to the nadir file
+* `[PERCENTAGE SIZE]` refers to the height of the nadir as a percentage of total image height. This must be specified as whole number between 1 (smallest) and 100 (covers entire image). Somewhere between 5% to 15% is what most other software tools use to generate a nadir.
+* `[OUTPUT_FOLDER_PATH]`: directory where outputted photo(s) with nadir should be stored.
 
 ### Examples
 
-**Take a single panoramic image and add a nadir covering 12% of the image:**
+**Take a single panoramic image and add a nadir covering 35% of the image and output to directory `/output`:**
 
-_MacOS / Linux:_
+```shell
+python3 nadir-patcher.py \
+	samples/input/GSAA7468.JPG \
+	nadir-library/trek_view_full_nadir.png \
+	25 \
+	samples/output/GSAA7468/
+```
 
-`python nadir-patcher.py samples/input/MULTISHOT_9698_000001.jpg samples/input/my_custom_nadir.png 12 samples/demo/`
+**Take a directory of panoramic images and add a nadir covering 15% of every image in the directory:**
 
-_Windows:_
-
-`python nadir-patcher.py "samples\input\MULTISHOT_9698_000001.jpg" "samples\input\my_custom_nadir.png" 12 "samples\demo"`
-
-**Take a directory of panoramic images and add a nadir covering 8% of every image in the directory:**
-
-_MacOS / Linux:_
-
-`python nadir-patcher.py samples/input/ samples/input/my_custom_nadir.png 8 samples/demo/`
-
-_Windows:_
-
-`python nadir-patcher.py "samples\input\" "samples\input\my_custom_nadir.png" 8 "samples\demo\"`
-
-**Take a single panoramic video and add a nadir covering 12% of the video:**
-
-_MacOS / Linux:_
-
-`python nadir-patcher.py samples/input/VIDEO_7152.mp4 samples/input/my_custom_nadir.png 12 samples/demo/`
-
-_Windows:_
-
-`python nadir-patcher.py "samples\input\VIDEO_7152.mp4" "samples\input\my_custom_nadir.png" 12 "samples\demo"`
-
-## Nadir library
-
-We've included some stock nadirs you can use in the [`nadir-libary/`](/nadir-library) directory of this repository.
-
-Submit you own logos (via pull request or email) to us and we'll add them to the library.
-
-### Branding guidelines
-
-If you plan to upload your photos to products like Google Street View, be aware of the branding guidelines for nadirs, otherwise your images could be rejected.
-
-[Street View branding guidelines can be viewed here](https://www.google.co.uk/streetview/sales/).
-
-## Support 
-
-We offer community support for all our software on our Campfire forum. [Ask a question or make a suggestion here](https://campfire.trekview.org/c/support/8).
+```shell
+python3 nadir-patcher.py \
+	samples/input/timelapse_images/ \
+	nadir-library/trek_view_full_nadir.png \
+	15 \
+	samples/output/timelapse_images/
+```
 
 ## License
 
-Nadir Patcher is licensed under a [GNU AGPLv3 License](/LICENSE.txt).
+[Apache 2.0](/LICENSE).

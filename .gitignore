@@ -1,2 +1,3 @@
-/samples/demo
+samples/
 .DS_Store
+nadir-patcher-venv/

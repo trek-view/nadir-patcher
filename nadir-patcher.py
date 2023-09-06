@@ -13,8 +13,6 @@ import shutil
 import sys
 import platform
 
-
-
 #Global Variables for temp folder and files that will be automatically deleted when process complete. 
 temp_folder_name_s="nadir_patcher_temp_s"
 temp_folder_name_d="nadir_patcher_temp_d"
